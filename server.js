@@ -34,6 +34,7 @@ app.get("/", function (req, res) {
 app.post("/api/user", function (req, res) {
   console.log("THIS ROUTE GOT HIT");
   console.log(req.body);
+  res.send("success");
 });
 
 // =============================================================================

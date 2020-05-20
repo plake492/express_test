@@ -48,19 +48,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script>
       $("#submitUser").on("click", (e) => {
+        e.preventDefault();
         const user = {
           userName: $("#email").val().trim(),
           password: $("#password").val().trim(),
         };
 
-        // $.post("/api/user");
-
         $.ajax({
           type: "POST",
           data: user,
           url: "/api/user",
-        }).then(() => {
-          console.log("user added");
+        }).then((res) => {
+          console.log(res);
         });
       });
     </script>
